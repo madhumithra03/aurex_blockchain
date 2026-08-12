@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AUREX | Blockchain Wallet</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ethers.js -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="navbar">
+
+        <div class="logo-area">
+            <div class="logo-symbol">
+                A
+            </div>
+
+            <div class="logo-name">
+                AUREX
+            </div>
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#" class="active">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Docs</a>
+
+        </nav>
+
+
+        <button id="connectButton" class="connect-button">
+            🦊 Connect MetaMask
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= MAIN SECTION ================= -->
+
+    <main class="hero">
+
+        <!-- LEFT SIDE -->
+
+        <section class="left-content">
+
+            <div class="small-label">
+                WEB3 WALLET
+            </div>
+
+            <h1>
+                AUREX
+            </h1>
+
+            <p>
+                A simple and secure gateway to your
+                Ethereum wallet.
+            </p>
+
+
+            <div class="buttons">
+
+                <button
+                    id="createWalletButton"
+                    class="create-button"
+                >
+                    ◈ &nbsp; Create Wallet
+                    <span>→</span>
+                </button>
+
+
+                <button
+                    id="importWalletButton"
+                    class="import-button"
+                >
+                    ↓ &nbsp; Import Wallet
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PHONE DESIGN ================= -->
+
+        <section class="phone-section">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+
+            <div class="block block-one"></div>
+            <div class="block block-two"></div>
+            <div class="block block-three"></div>
+
+
+            <div class="phone">
+
+                <div class="phone-camera"></div>
+
+                <div class="phone-header">
+                    <span>☰</span>
+                    <strong>AUREX</strong>
+                    <span>◈</span>
+                </div>
+
+
+                <div class="balance-card">
+
+                    <small>
+                        TOTAL BALANCE
+                    </small>
+
+                    <h2 id="phoneBalance">
+                        0 ETH
+                    </h2>
+
+                    <p>
+                        Ethereum
+                    </p>
+
+                </div>
+
+
+                <div class="asset-title">
+                    ASSETS
+                </div>
+
+
+                <div class="asset">
+
+                    <div class="coin">
+                        Ξ
+                    </div>
+
+                    <div>
+                        <strong>ETH</strong>
+                        <small>Ethereum</small>
+                    </div>
+
+                    <b id="phoneEth">
+                        0.00
+                    </b>
+
+                </div>
+
+
+                <div class="asset">
+
+                    <div class="coin blue">
+                        $
+                    </div>
+
+                    <div>
+                        <strong>USDC</strong>
+                        <small>USD Coin</small>
+                    </div>
+
+                    <b>
+                        0.00
+                    </b>
+
+                </div>
+
+
+                <div class="phone-menu">
+
+                    <span>◉</span>
+                    <span>▥</span>
+                    <span>◇</span>
+                    <span>⚙</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= INFORMATION ================= -->
+
+    <section class="wallet-info">
+
+        <div class="info-box">
+
+            <span>▣</span>
+
+            <div>
+                <small>WALLET ADDRESS</small>
+                <strong id="walletAddress">
+                    Not Connected
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>Ξ</span>
+
+            <div>
+                <small>ETH BALANCE</small>
+                <strong id="ethBalance">
+                    0 ETH
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <span>◌</span>
+
+            <div>
+                <small>NETWORK</small>
+                <strong id="networkName">
+                    Not Connected
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CREATE WALLET MODAL ================= -->
+
+    <div id="walletModal" class="modal">
+
+        <div class="modal-box">
+
+            <button id="closeModal" class="close">
+                ×
+            </button>
+
+            <h2>
+                Your AUREX Wallet
+            </h2>
+
+            <p class="warning">
+                ⚠ Educational demo only. Never use a real seed
+                phrase in an untrusted website.
+            </p>
+
+
+            <h3>
+                Your 12-word recovery phrase
+            </h3>
+
+            <div id="phraseContainer" class="phrase-container">
+            </div>
+
+
+            <div class="wallet-details">
+
+                <label>
+                    Wallet Address
+                </label>
+
+                <div id="generatedAddress" class="detail-box">
+                    -
+                </div>
+
+
+                <label>
+                    Encrypted Wallet JSON
+                </label>
+
+                <div class="detail-box">
+                    <button id="downloadJson" class="download-button">
+                        Download Encrypted JSON
+                    </button>
+                </div>
+
+            </div>
+
+
+            <p class="security-note">
+                Your recovery phrase gives control of the wallet.
+                Never share it with anyone.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= IMPORT MODAL ================= -->
+
+    <div id="importModal" class="modal">
+
+        <div class="modal-box">
+
+            <button id="closeImportModal" class="close">
+                ×
+            </button>
+
+            <h2>
+                Import AUREX Wallet
+            </h2>
+
+            <p>
+                Enter a 12-word recovery phrase for this
+                educational demo.
+            </p>
+
+
+            <textarea
+                id="importPhrase"
+                placeholder="word1 word2 word3 ... word12"
+            ></textarea>
+
+
+            <button
+                id="confirmImport"
+                class="create-button full-button"
+            >
+                Import Wallet →
+            </button>
+
+
+            <p id="importMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

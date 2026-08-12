@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.local
+*.key
+*.pem
+wallet.json
+secret.json
