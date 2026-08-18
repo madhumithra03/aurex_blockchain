@@ -1,7 +1,52 @@
+# ==========================================
+# AUREX - Git Ignore File
+# ==========================================
+
+# Node.js dependencies
 node_modules/
+
+# Environment variables
 .env
 .env.local
+.env.*
+!.env.example
+
+# Private keys and certificates
 *.key
 *.pem
+*.secret
+
+# Wallet / blockchain sensitive files
 wallet.json
 secret.json
+keystore/
+wallets/
+
+# Backup wallet files
+*.wallet
+*.backup
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Build / generated files
+dist/
+build/
+.cache/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code local workspace settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
