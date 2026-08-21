@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>AUREX | Blockchain Wallet</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
     <!-- Ethers.js -->
-    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js">
+    </script>
+
 </head>
+
 
 <body>
 
@@ -19,6 +30,7 @@
     <header class="navbar">
 
         <div class="logo-area">
+
             <div class="logo-symbol">
                 A
             </div>
@@ -26,32 +38,36 @@
             <div class="logo-name">
                 AUREX
             </div>
+
         </div>
 
 
         <nav class="navigation">
 
-            <a href="#" class="active">Home</a>
-            <a href="#">Features</a>
-            <a href="#">About</a>
-            <a href="#">Docs</a>
+            <a href="#" class="active">
+                Home
+            </a>
+
+            <a href="#">
+                Features
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+            <a href="#">
+                Docs
+            </a>
 
         </nav>
-
-
-        <button id="connectButton" class="connect-button">
-            🦊 Connect MetaMask
-        </button>
 
     </header>
 
 
-
-    <!-- ================= MAIN SECTION ================= -->
+    <!-- ================= MAIN ================= -->
 
     <main class="hero">
-
-        <!-- LEFT SIDE -->
 
         <section class="left-content">
 
@@ -73,19 +89,31 @@
 
                 <button
                     id="createWalletButton"
-                    class="create-button"
-                >
-                    ◈ &nbsp; Create Wallet
-                    <span>→</span>
+                    class="create-button">
+
+                    <span>
+                        ◈ &nbsp; Create Wallet
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
                 </button>
 
 
                 <button
                     id="importWalletButton"
-                    class="import-button"
-                >
-                    ↓ &nbsp; Import Wallet
-                    <span>↗</span>
+                    class="import-button">
+
+                    <span>
+                        ↓ &nbsp; Import Wallet
+                    </span>
+
+                    <span>
+                        ↗
+                    </span>
+
                 </button>
 
             </div>
@@ -93,8 +121,7 @@
         </section>
 
 
-
-        <!-- ================= PHONE DESIGN ================= -->
+        <!-- ================= PHONE ================= -->
 
         <section class="phone-section">
 
@@ -111,10 +138,21 @@
 
                 <div class="phone-camera"></div>
 
+
                 <div class="phone-header">
-                    <span>☰</span>
-                    <strong>AUREX</strong>
-                    <span>◈</span>
+
+                    <span>
+                        ☰
+                    </span>
+
+                    <strong>
+                        AUREX
+                    </strong>
+
+                    <span>
+                        ◈
+                    </span>
+
                 </div>
 
 
@@ -147,8 +185,15 @@
                     </div>
 
                     <div>
-                        <strong>ETH</strong>
-                        <small>Ethereum</small>
+
+                        <strong>
+                            ETH
+                        </strong>
+
+                        <small>
+                            Ethereum
+                        </small>
+
                     </div>
 
                     <b id="phoneEth">
@@ -165,8 +210,15 @@
                     </div>
 
                     <div>
-                        <strong>USDC</strong>
-                        <small>USD Coin</small>
+
+                        <strong>
+                            USDC
+                        </strong>
+
+                        <small>
+                            USD Coin
+                        </small>
+
                     </div>
 
                     <b>
@@ -192,20 +244,26 @@
     </main>
 
 
-
-    <!-- ================= INFORMATION ================= -->
+    <!-- ================= WALLET INFORMATION ================= -->
 
     <section class="wallet-info">
 
         <div class="info-box">
 
-            <span>▣</span>
+            <span>
+                ▣
+            </span>
 
             <div>
-                <small>WALLET ADDRESS</small>
+
+                <small>
+                    WALLET ADDRESS
+                </small>
+
                 <strong id="walletAddress">
                     Not Connected
                 </strong>
+
             </div>
 
         </div>
@@ -213,13 +271,20 @@
 
         <div class="info-box">
 
-            <span>Ξ</span>
+            <span>
+                Ξ
+            </span>
 
             <div>
-                <small>ETH BALANCE</small>
+
+                <small>
+                    ETH BALANCE
+                </small>
+
                 <strong id="ethBalance">
                     0 ETH
                 </strong>
+
             </div>
 
         </div>
@@ -227,13 +292,20 @@
 
         <div class="info-box">
 
-            <span>◌</span>
+            <span>
+                ◌
+            </span>
 
             <div>
-                <small>NETWORK</small>
+
+                <small>
+                    NETWORK
+                </small>
+
                 <strong id="networkName">
                     Not Connected
                 </strong>
+
             </div>
 
         </div>
@@ -241,34 +313,144 @@
     </section>
 
 
+    <!-- =====================================================
+         PASSWORD MODAL
+    ===================================================== -->
 
-    <!-- ================= CREATE WALLET MODAL ================= -->
+    <div
+        id="passwordModal"
+        class="modal">
 
-    <div id="walletModal" class="modal">
+        <div class="modal-box password-modal-box">
 
-        <div class="modal-box">
-
-            <button id="closeModal" class="close">
+            <button
+                id="closePasswordModal"
+                class="close">
                 ×
             </button>
+
+            <h2>
+                Create Password
+            </h2>
+
+            <p>
+                Create a password to protect your
+                AUREX wallet.
+            </p>
+
+
+            <div class="password-field">
+
+                <label>
+                    Create Password
+                </label>
+
+                <input
+                    type="password"
+                    id="createPassword"
+                    placeholder="Create password"
+                    autocomplete="new-password">
+
+            </div>
+
+
+            <div class="password-field">
+
+                <label>
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    autocomplete="new-password">
+
+            </div>
+
+
+            <p
+                id="passwordMessage"
+                class="password-message">
+            </p>
+
+
+            <button
+                id="confirmCreateWallet"
+                class="create-button full-button">
+
+                Create Wallet →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         WALLET CREATED MODAL
+    ===================================================== -->
+
+    <div
+        id="walletModal"
+        class="modal">
+
+        <div class="modal-box wallet-created-box">
+
+            <button
+                id="closeModal"
+                class="close">
+                ×
+            </button>
+
 
             <h2>
                 Your AUREX Wallet
             </h2>
 
+
             <p class="warning">
-                ⚠ Educational demo only. Never use a real seed
-                phrase in an untrusted website.
+
+                ⚠ Educational demo only.
+                Never use a real funded wallet on this website.
+
             </p>
 
 
-            <h3>
-                Your 12-word recovery phrase
-            </h3>
+            <!-- RECOVERY PHRASE -->
 
-            <div id="phraseContainer" class="phrase-container">
+            <div class="section-heading-row">
+
+                <h3>
+                    Your 12-word recovery phrase
+                </h3>
+
+                <button
+                    id="copyPhraseButton"
+                    class="copy-icon"
+                    title="Copy recovery phrase">
+
+                    ⧉
+
+                </button>
+
             </div>
 
+
+            <div
+                id="phraseContainer"
+                class="phrase-container">
+            </div>
+
+
+            <p
+                id="copyPhraseMessage"
+                class="copy-message">
+            </p>
+
+
+            <!-- ADDRESS -->
 
             <div class="wallet-details">
 
@@ -276,27 +458,58 @@
                     Wallet Address
                 </label>
 
-                <div id="generatedAddress" class="detail-box">
-                    -
+
+                <div class="copy-detail-box">
+
+                    <span id="generatedAddress">
+                        -
+                    </span>
+
+                    <button
+                        id="copyAddressButton"
+                        class="copy-icon"
+                        title="Copy address">
+
+                        ⧉
+
+                    </button>
+
                 </div>
 
 
+                <!-- JSON -->
+
                 <label>
-                    Encrypted Wallet JSON
+                    Wallet JSON
                 </label>
 
-                <div class="detail-box">
-                    <button id="downloadJson" class="download-button">
-                        Download Encrypted JSON
+
+                <div class="json-box">
+
+                    <p>
+                        Contains address, public key,
+                        private key and encrypted keystore.
+                    </p>
+
+
+                    <button
+                        id="downloadJson"
+                        class="download-button">
+
+                        ↓ &nbsp; Download Wallet JSON
+
                     </button>
+
                 </div>
 
             </div>
 
 
             <p class="security-note">
-                Your recovery phrase gives control of the wallet.
-                Never share it with anyone.
+
+                Your recovery phrase and private key control
+                the wallet. Never share them.
+
             </p>
 
         </div>
@@ -304,42 +517,50 @@
     </div>
 
 
+    <!-- =====================================================
+         IMPORT MODAL
+    ===================================================== -->
 
-    <!-- ================= IMPORT MODAL ================= -->
-
-    <div id="importModal" class="modal">
+    <div
+        id="importModal"
+        class="modal">
 
         <div class="modal-box">
 
-            <button id="closeImportModal" class="close">
+            <button
+                id="closeImportModal"
+                class="close">
                 ×
             </button>
+
 
             <h2>
                 Import AUREX Wallet
             </h2>
 
+
             <p>
-                Enter a 12-word recovery phrase for this
-                educational demo.
+                Enter your 12-word recovery phrase.
             </p>
 
 
             <textarea
                 id="importPhrase"
-                placeholder="word1 word2 word3 ... word12"
-            ></textarea>
+                placeholder="word1 word2 word3 ... word12">
+            </textarea>
 
 
             <button
                 id="confirmImport"
-                class="create-button full-button"
-            >
+                class="create-button full-button">
+
                 Import Wallet →
+
             </button>
 
 
-            <p id="importMessage"></p>
+            <p id="importMessage">
+            </p>
 
         </div>
 
@@ -349,4 +570,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

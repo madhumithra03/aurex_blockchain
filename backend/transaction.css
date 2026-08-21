@@ -1,0 +1,1126 @@
+/* =====================================================
+   AUREX TRANSACTIONS
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #fafafa;
+
+    color:
+        #29272d;
+
+    min-height:
+        100vh;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dashboard-header {
+
+    height:
+        88px;
+
+    background:
+        white;
+
+    border-bottom:
+        1px solid #f1e4e1;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding:
+        0 70px;
+
+    gap:
+        30px;
+
+}
+
+
+.brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin-right:
+        auto;
+
+}
+
+
+.brand-symbol {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border:
+        2px solid #f28d88;
+
+    color:
+        #f28d88;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        22px;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            93% 25%,
+            93% 75%,
+            50% 100%,
+            7% 75%,
+            7% 25%
+        );
+
+}
+
+
+.brand-name {
+
+    font-size:
+        32px;
+
+    font-style:
+        italic;
+
+    color:
+        #f28d88;
+
+    letter-spacing:
+        -1px;
+
+}
+
+
+.network-pill {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        10px 15px;
+
+    background:
+        #fff5f3;
+
+    border:
+        1px solid #f6d7d3;
+
+    border-radius:
+        30px;
+
+    color:
+        #777;
+
+    font-size:
+        13px;
+
+}
+
+
+.network-dot {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    background:
+        #53b879;
+
+    border-radius:
+        50%;
+
+}
+
+
+.header-button {
+
+    border:
+        1px solid #f2aaa5;
+
+    background:
+        white;
+
+    color:
+        #e88b85;
+
+    padding:
+        10px 20px;
+
+    border-radius:
+        10px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        600;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.transactions-page {
+
+    max-width:
+        1150px;
+
+    margin:
+        0 auto;
+
+    padding:
+        50px 35px 70px;
+
+}
+
+
+.transactions-heading {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.transactions-heading small {
+
+    color:
+        #f28d88;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.transactions-heading h1 {
+
+    margin-top:
+        7px;
+
+    font-size:
+        38px;
+
+}
+
+
+.transactions-heading p {
+
+    margin-top:
+        8px;
+
+    color:
+        #999;
+
+    font-size:
+        13px;
+
+}
+
+
+.refresh-button {
+
+    border:
+        1px solid #f2aaa5;
+
+    background:
+        white;
+
+    color:
+        #e88b85;
+
+    padding:
+        11px 18px;
+
+    border-radius:
+        10px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        600;
+
+}
+
+
+/* =====================================================
+   ADDRESS
+===================================================== */
+
+.wallet-address-card {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        20px;
+
+    background:
+        white;
+
+    border:
+        1px solid #eee6e4;
+
+    border-radius:
+        18px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.wallet-address-card small {
+
+    display:
+        block;
+
+    color:
+        #aaa;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1.5px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.wallet-address-card strong {
+
+    font-size:
+        14px;
+
+    word-break:
+        break-all;
+
+}
+
+
+.copy-button {
+
+    border:
+        1px solid #f2aaa5;
+
+    background:
+        #fff7f5;
+
+    color:
+        #e88b85;
+
+    border-radius:
+        9px;
+
+    padding:
+        10px 14px;
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        15px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.summary-card {
+
+    background:
+        white;
+
+    border:
+        1px solid #eee6e4;
+
+    border-radius:
+        16px;
+
+    padding:
+        20px;
+
+}
+
+
+.summary-card small {
+
+    display:
+        block;
+
+    color:
+        #aaa;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.summary-card strong {
+
+    font-size:
+        24px;
+
+    color:
+        #333;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.transactions-section {
+
+    background:
+        white;
+
+    border:
+        1px solid #eee6e4;
+
+    border-radius:
+        20px;
+
+    padding:
+        25px;
+
+}
+
+
+.section-heading {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        19px;
+
+}
+
+
+.section-heading span {
+
+    color:
+        #999;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   TRANSACTION LIST
+===================================================== */
+
+.transaction-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.transaction-card {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        17px;
+
+    border:
+        1px solid #eee6e4;
+
+    border-radius:
+        15px;
+
+    transition:
+        0.2s;
+
+}
+
+
+.transaction-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.05);
+
+}
+
+
+.transaction-icon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        20px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.transaction-icon.sent {
+
+    background:
+        #fff0ed;
+
+    color:
+        #d9534f;
+
+}
+
+
+.transaction-icon.received {
+
+    background:
+        #edf7ef;
+
+    color:
+        #53a96e;
+
+}
+
+
+.transaction-info {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+}
+
+
+.transaction-info strong {
+
+    display:
+        block;
+
+    font-size:
+        14px;
+
+}
+
+
+.transaction-info small {
+
+    display:
+        block;
+
+    color:
+        #999;
+
+    font-size:
+        10px;
+
+    margin-top:
+        5px;
+
+}
+
+
+.transaction-amount {
+
+    text-align:
+        right;
+
+}
+
+
+.transaction-amount strong {
+
+    display:
+        block;
+
+    font-size:
+        14px;
+
+}
+
+
+.transaction-amount small {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #53a96e;
+
+    font-size:
+        10px;
+
+}
+
+
+.transaction-amount .negative {
+
+    color:
+        #d9534f;
+
+}
+
+
+.transaction-amount .positive {
+
+    color:
+        #53a96e;
+
+}
+
+
+.view-button {
+
+    border:
+        none;
+
+    background:
+        #fff5f3;
+
+    color:
+        #e88b85;
+
+    border-radius:
+        8px;
+
+    padding:
+        8px 11px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   LOADING / EMPTY
+===================================================== */
+
+.loading-box {
+
+    text-align:
+        center;
+
+    padding:
+        50px 20px;
+
+    color:
+        #888;
+
+}
+
+
+.loading-icon {
+
+    color:
+        #f28d88;
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.loading-box strong {
+
+    display:
+        block;
+
+    color:
+        #555;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.loading-box p {
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(0,0,0,0.35);
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    z-index:
+        9999;
+
+}
+
+
+.modal.show {
+
+    display:
+        flex;
+
+}
+
+
+.modal-box {
+
+    width:
+        min(500px, 100%);
+
+    background:
+        white;
+
+    border-radius:
+        22px;
+
+    padding:
+        30px;
+
+    position:
+        relative;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.18);
+
+}
+
+
+.close-button {
+
+    position:
+        absolute;
+
+    top:
+        14px;
+
+    right:
+        15px;
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        #f7f3f2;
+
+    color:
+        #777;
+
+    font-size:
+        20px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.success-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #edf7ef;
+
+    color:
+        #53a96e;
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.modal-box h2 {
+
+    font-size:
+        22px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.modal-box > p {
+
+    color:
+        #888;
+
+    font-size:
+        12px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.detail-row {
+
+    padding:
+        13px;
+
+    margin-top:
+        9px;
+
+    border:
+        1px solid #eee6e4;
+
+    border-radius:
+        11px;
+
+    background:
+        #faf7f6;
+
+}
+
+
+.detail-row span {
+
+    display:
+        block;
+
+    color:
+        #999;
+
+    font-size:
+        10px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.detail-row strong {
+
+    display:
+        block;
+
+    color:
+        #444;
+
+    font-size:
+        11px;
+
+    word-break:
+        break-all;
+
+}
+
+
+.explorer-button {
+
+    display:
+        block;
+
+    margin-top:
+        18px;
+
+    padding:
+        13px;
+
+    text-align:
+        center;
+
+    background:
+        #f28d88;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    border-radius:
+        11px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .dashboard-header {
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .network-pill {
+
+        display:
+            none;
+
+    }
+
+
+    .transactions-page {
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .transactions-heading {
+
+        align-items:
+            flex-start;
+
+        gap:
+            15px;
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .transaction-amount {
+
+        display:
+            none;
+
+    }
+
+
+    .summary-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}

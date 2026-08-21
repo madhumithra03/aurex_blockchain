@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AUREX | Verify Wallet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <main class="verify-page">
+
+        <section class="verify-card">
+
+
+            <div class="verify-logo">
+
+                <div class="logo-symbol">
+                    A
+                </div>
+
+                <div class="logo-name">
+                    AUREX
+                </div>
+
+            </div>
+
+
+            <h1>
+                Verify Your Wallet
+            </h1>
+
+
+            <p>
+                Before entering your AUREX wallet,
+                confirm that you safely copied your
+                12-word recovery phrase.
+            </p>
+
+
+            <div class="verify-warning">
+
+                <strong>
+                    Security check
+                </strong>
+
+                <br>
+
+                Enter the same 12 words you received
+                during wallet creation. Never share
+                your recovery phrase with anyone.
+
+            </div>
+
+
+            <label>
+                Recovery Phrase
+            </label>
+
+
+            <textarea
+                id="verifyPhrase"
+                placeholder="Enter your 12 recovery words here...">
+            </textarea>
+
+
+            <p
+                id="verifyStatus"
+                class="verify-status">
+            </p>
+
+
+            <button
+                id="verifyButton"
+                class="create-button full-button">
+
+                Verify Recovery Phrase →
+
+            </button>
+
+
+            <a
+                href="index.html"
+                class="back-link">
+
+                ← Back to AUREX
+
+            </a>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="verify.js"></script>
+
+</body>
+
+</html>

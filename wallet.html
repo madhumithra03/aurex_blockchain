@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AUREX | Wallet Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="wallet.css">
+
+    <!-- Ethers.js -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js">
+    </script>
+
+    <!-- QR Code -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="dashboard-header">
+
+
+        <div class="brand">
+
+            <div class="brand-symbol">
+                A
+            </div>
+
+            <div class="brand-name">
+                AUREX
+            </div>
+
+        </div>
+
+
+        <!-- NETWORK -->
+
+        <div class="network-pill">
+
+            <span class="network-dot"></span>
+
+            Ethereum Sepolia
+
+        </div>
+
+
+        <div class="header-actions">
+
+
+            <button
+                id="transactionButton"
+                class="header-button">
+
+                Transactions
+
+            </button>
+
+
+            <button
+                id="homeButton"
+                class="header-button">
+
+                Home
+
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <main class="dashboard">
+
+
+        <!-- =================================================
+             LEFT
+        ================================================== -->
+
+        <section class="dashboard-main">
+
+
+            <!-- BALANCE -->
+
+            <div class="balance-card-large">
+
+
+                <div class="balance-top">
+
+                    <span>
+                        TOTAL BALANCE
+                    </span>
+
+
+                    <span class="eth-symbol">
+                        Ξ
+                    </span>
+
+                </div>
+
+
+                <h1 id="balanceAmount">
+
+                    0.0000 ETH
+
+                </h1>
+
+
+                <p id="balanceStatus">
+
+                    Connecting to Ethereum Sepolia...
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADDRESS
+            ================================================== -->
+
+            <div class="address-card">
+
+
+                <div>
+
+
+                    <small>
+                        YOUR WALLET ADDRESS
+                    </small>
+
+
+                    <div class="address-row">
+
+
+                        <strong id="walletAddress">
+
+                            0x......
+
+                        </strong>
+
+
+                        <button
+                            id="copyAddress"
+                            class="copy-address"
+                            title="Copy wallet address">
+
+                            ⧉
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="address-network">
+
+
+                    <span>
+
+                        Ethereum
+
+                    </span>
+
+
+                    <span>
+
+                        ● Connected
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEND / RECEIVE
+            ================================================== -->
+
+            <div class="actions">
+
+
+                <button
+                    id="receiveButton"
+                    class="action-button receive">
+
+
+                    <span class="action-icon">
+
+                        ↓
+
+                    </span>
+
+
+                    <span>
+
+                        Receive
+
+                    </span>
+
+
+                </button>
+
+
+                <button
+                    id="sendButton"
+                    class="action-button send">
+
+
+                    <span class="action-icon">
+
+                        ↑
+
+                    </span>
+
+
+                    <span>
+
+                        Send
+
+                    </span>
+
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ASSETS
+            ================================================== -->
+
+            <div class="section-title">
+
+
+                <span>
+
+                    Assets
+
+                </span>
+
+
+                <span>
+
+                    Balance
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="asset-row">
+
+
+                <div class="asset-left">
+
+
+                    <div class="eth-circle">
+
+                        Ξ
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+
+                            Ethereum
+
+                        </strong>
+
+
+                        <small>
+
+                            ETH
+
+                        </small>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="asset-right">
+
+
+                    <strong id="assetBalance">
+
+                        0.0000 ETH
+
+                    </strong>
+
+
+                    <small>
+
+                        Sepolia ETH
+
+                    </small>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+            ================================================== -->
+
+            <div class="section-title activity-title">
+
+
+                <span>
+
+                    Recent Activity
+
+                </span>
+
+
+                <button
+                    id="refreshTransactions"
+                    class="refresh-button">
+
+                    ↻ Refresh
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                id="transactionList"
+                class="transaction-list">
+
+
+                <div class="empty-activity">
+
+
+                    <div class="activity-icon">
+
+                        ◌
+
+                    </div>
+
+
+                    <strong>
+
+                        Loading transactions...
+
+                    </strong>
+
+
+                    <p>
+
+                        Checking Ethereum Sepolia.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SIDE
+        ================================================== -->
+
+        <aside class="dashboard-side">
+
+
+            <!-- WALLET CARD -->
+
+            <div class="side-card">
+
+
+                <div class="side-card-heading">
+
+
+                    <span>
+
+                        AUREX WALLET
+
+                    </span>
+
+
+                    <span>
+
+                        ◈
+
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="mini-balance">
+
+
+                    <small>
+
+                        Available balance
+
+                    </small>
+
+
+                    <strong id="sideBalance">
+
+                        0 ETH
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <div class="mini-address">
+
+
+                    <small>
+
+                        ADDRESS
+
+                    </small>
+
+
+                    <strong id="sideAddress">
+
+                        0x......
+
+                    </strong>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="security-card">
+
+
+                <div class="security-icon">
+
+                    ✓
+
+                </div>
+
+
+                <div>
+
+
+                    <strong>
+
+                        Wallet verified
+
+                    </strong>
+
+
+                    <p>
+
+                        Recovery phrase verified successfully.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- NETWORK -->
+
+            <div class="network-card">
+
+
+                <small>
+
+                    NETWORK
+
+                </small>
+
+
+                <strong>
+
+                    Ethereum Sepolia
+
+                </strong>
+
+
+                <span>
+
+                    Chain ID: 11155111
+
+                </span>
+
+
+            </div>
+
+
+        </aside>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RECEIVE MODAL
+    ====================================================== -->
+
+    <div
+        id="receiveModal"
+        class="modal">
+
+
+        <div class="modal-box receive-box">
+
+
+            <button
+                id="closeReceive"
+                class="close-button">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-icon">
+
+                ↓
+
+            </div>
+
+
+            <h2>
+
+                Receive ETH
+
+            </h2>
+
+
+            <p>
+
+                Copy your AUREX wallet address or scan
+                the QR code to receive Sepolia ETH.
+
+            </p>
+
+
+            <div class="receive-address">
+
+
+                <span id="receiveAddress">
+
+                    0x......
+
+                </span>
+
+
+                <button
+                    id="copyReceiveAddress"
+                    class="copy-address">
+
+                    ⧉
+
+                </button>
+
+
+            </div>
+
+
+            <div
+                id="qrcode"
+                class="qr-container">
+
+            </div>
+
+
+            <span class="qr-label">
+
+                Scan to receive
+
+            </span>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SEND MODAL
+    ====================================================== -->
+
+    <div
+        id="sendModal"
+        class="modal">
+
+
+        <div class="modal-box send-box">
+
+
+            <button
+                id="closeSend"
+                class="close-button">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-icon send-icon">
+
+                ↑
+
+            </div>
+
+
+            <h2>
+
+                Send ETH
+
+            </h2>
+
+
+            <p>
+
+                Enter the recipient wallet address and amount.
+
+            </p>
+
+
+            <!-- FROM -->
+
+            <div class="from-box">
+
+
+                <small>
+
+                    FROM
+
+                </small>
+
+
+                <strong id="sendFromAddress">
+
+                    0x......
+
+                </strong>
+
+
+            </div>
+
+
+
+            <!-- TO -->
+
+            <label>
+
+                Recipient Address
+
+            </label>
+
+
+            <div class="recipient-row">
+
+
+                <input
+                    id="recipientAddress"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Paste recipient 0x... address">
+
+
+                <button
+                    id="pasteRecipient"
+                    class="paste-button">
+
+                    Paste
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- AMOUNT -->
+
+            <label>
+
+                Amount
+
+            </label>
+
+
+            <div class="amount-input">
+
+
+                <input
+                    id="sendAmount"
+                    type="number"
+                    min="0"
+                    step="0.0001"
+                    placeholder="0.00">
+
+
+                <span>
+
+                    ETH
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- SEND BUTTON -->
+
+            <button
+                id="sendTransaction"
+                class="create-send-button">
+
+                Send ETH →
+
+            </button>
+
+
+            <p
+                id="sendMessage"
+                class="send-message">
+
+            </p>
+
+
+            <div class="demo-note">
+
+
+                Network:
+                <strong>
+                    Ethereum Sepolia
+                </strong>
+
+
+                <br>
+
+
+                AUREX signs the transaction locally.
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TRANSACTION DETAILS MODAL
+    ====================================================== -->
+
+    <div
+        id="transactionModal"
+        class="modal">
+
+
+        <div class="modal-box transaction-details-box">
+
+
+            <button
+                id="closeTransaction"
+                class="close-button">
+
+                ×
+
+            </button>
+
+
+            <div class="success-icon">
+
+                ✓
+
+            </div>
+
+
+            <h2>
+
+                Transaction Details
+
+            </h2>
+
+
+            <p>
+
+                Detailed information for this Sepolia transaction.
+
+            </p>
+
+
+            <div class="detail-row">
+
+
+                <span>
+
+                    Status
+
+                </span>
+
+
+                <strong id="detailStatus">
+
+                    -
+
+                </strong>
+
+
+            </div>
+
+
+            <div class="detail-row">
+
+
+                <span>
+
+                    Amount
+
+                </span>
+
+
+                <strong id="detailAmount">
+
+                    -
+
+                </strong>
+
+
+            </div>
+
+
+            <div class="detail-row">
+
+
+                <span>
+
+                    From
+
+                </span>
+
+
+                <strong id="detailFrom">
+
+                    -
+
+                </strong>
+
+
+            </div>
+
+
+            <div class="detail-row">
+
+
+                <span>
+
+                    To
+
+                </span>
+
+
+                <strong id="detailTo">
+
+                    -
+
+                </strong>
+
+
+            </div>
+
+
+            <div class="detail-row">
+
+
+                <span>
+
+                    Date
+
+                </span>
+
+
+                <strong id="detailDate">
+
+                    -
+
+                </strong>
+
+
+            </div>
+
+
+            <div class="detail-row">
+
+
+                <span>
+
+                    Transaction Hash
+
+                </span>
+
+
+                <strong id="detailHash">
+
+                    -
+
+                </strong>
+
+
+            </div>
+
+
+            <a
+                id="explorerLink"
+                class="explorer-button"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                View on Sepolia Etherscan ↗
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="wallet.js"></script>
+
+
+</body>
+
+</html>

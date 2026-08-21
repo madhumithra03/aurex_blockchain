@@ -1,52 +1,118 @@
 # ==========================================
-# AUREX - Git Ignore File
+# AUREX - Git Ignore
 # ==========================================
 
-# Node.js dependencies
-node_modules/
 
-# Environment variables
+# ==========================================
+# Node.js
+# ==========================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ==========================================
+# Environment Variables
+# ==========================================
+
 .env
 .env.local
 .env.*
 !.env.example
 
-# Private keys and certificates
+
+# ==========================================
+# Backend Environment
+# ==========================================
+
+backend/.env
+
+
+# ==========================================
+# Private Keys / Certificates
+# ==========================================
+
 *.key
 *.pem
 *.secret
+*.private
+*.privkey
 
-# Wallet / blockchain sensitive files
+
+# ==========================================
+# Wallet / Blockchain Sensitive Files
+# ==========================================
+
 wallet.json
 secret.json
+aurex-wallet.json
+
 keystore/
 wallets/
 
-# Backup wallet files
+
+# ==========================================
+# Backup / Temporary Wallet Files
+# ==========================================
+
 *.wallet
 *.backup
+*.bak
 
+
+# ==========================================
 # Logs
+# ==========================================
+
 *.log
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
-# Build / generated files
+
+# ==========================================
+# Build / Generated Files
+# ==========================================
+
 dist/
 build/
 .cache/
+coverage/
 
-# Operating system files
+
+# ==========================================
+# Operating System
+# ==========================================
+
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# VS Code local workspace settings
+
+# ==========================================
+# VS Code
+# ==========================================
+
 .vscode/
 
-# Temporary files
+
+# ==========================================
+# Temporary Files
+# ==========================================
+
 *.tmp
 *.temp
 *.swp
 *.swo
+
+
+# ==========================================
+# Local Database / Runtime Files
+# ==========================================
+
+*.db
+*.sqlite
+*.sqlite3
